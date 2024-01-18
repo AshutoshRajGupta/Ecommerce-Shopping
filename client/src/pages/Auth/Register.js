@@ -10,7 +10,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  //   const [answer, setAnswer] = useState("");
+  const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
 
   // form function
@@ -23,7 +23,7 @@ const Register = () => {
         password,
         phone,
         address,
-        // answer,
+        answer,
       });
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
@@ -98,7 +98,7 @@ const Register = () => {
               required
             />
           </div>
-          {/* <div className="mb-3">
+          <div className="mb-3">
             <input
               type="text"
               value={answer}
@@ -108,7 +108,7 @@ const Register = () => {
               placeholder="What is Your Favorite sports"
               required
             />
-          </div> */}
+          </div>
           <button type="submit" className="btn btn-primary">
             REGISTER
           </button>
