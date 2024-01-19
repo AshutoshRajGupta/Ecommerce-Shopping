@@ -3,17 +3,17 @@ import {
   // brainTreePaymentController,
   // braintreeTokenController,
   createProductController,
-  // deleteProductController,
-  // getProductController,
-  // getSingleProductController,
+  deleteProductController,
+  getProductController,
+  getSingleProductController,
   // productCategoryController,
   // productCountController,
   // productFiltersController,
   // productListController,
-  // productPhotoController,
+  productPhotoController,
   // realtedProductController,
   // searchProductController,
-  // updateProductController,
+  updateProductController,
 } from "../controllers/productController.js";
 import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
 import formidable from "express-formidable";
@@ -29,25 +29,25 @@ router.post(
   createProductController
 );
 //routes
-// router.put(
-//   "/update-product/:pid",
-//   requireSignIn,
-//   isAdmin,
-//   formidable(),
-//   updateProductController
-// );
+router.put(
+  "/update-product/:pid",
+  requireSignIn,
+  isAdmin,
+  formidable(),
+  updateProductController
+);
 
 //get products
-// router.get("/get-product", getProductController);
+router.get("/get-product", getProductController);
 
 //single product
-// router.get("/get-product/:slug", getSingleProductController);
+router.get("/get-product/:slug", getSingleProductController);
 
 //get photo
-// router.get("/product-photo/:pid", productPhotoController);
+router.get("/product-photo/:pid", productPhotoController);
 
 //delete rproduct
-// router.delete("/delete-product/:pid", deleteProductController);
+router.delete("/delete-product/:pid", deleteProductController);
 
 //filter product
 // router.post("/product-filters", productFiltersController);

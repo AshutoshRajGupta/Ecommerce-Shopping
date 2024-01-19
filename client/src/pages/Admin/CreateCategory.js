@@ -3,8 +3,8 @@ import Layout from "./../../components/Layout/Layout";
 import AdminMenu from "./../../components/Layout/AdminMenu";
 import toast from "react-hot-toast";
 import axios from "axios";
-// import CategoryForm from "../../components/Form/CategoryForm";
-// import { Modal } from "antd";
+import CategoryForm from "../../components/Form/CategoryForm";
+import { Modal } from "antd";
 const CreateCategory = () => {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
@@ -26,7 +26,7 @@ const CreateCategory = () => {
       }
     } catch (error) {
       console.log(error);
-      // toast.error("somthing went wrong in input form");
+      toast.error("somthing went wrong in input form");
     }
   };
 
@@ -48,26 +48,26 @@ const CreateCategory = () => {
   }, []);
 
   //update category
-  //   const handleUpdate = async (e) => {
-  //     e.preventDefault();
-  //     try {
-  //       const { data } = await axios.put(
-  //         `/api/v1/category/update-category/${selected._id}`,
-  //         { name: updatedName }
-  //       );
-  //       if (data?.success) {
-  //         toast.success(`${updatedName} is updated`);
-  //         setSelected(null);
-  //         setUpdatedName("");
-  //         setVisible(false);
-  //         getAllCategory();
-  //       } else {
-  //         toast.error(data.message);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.put(
+        `/api/v1/category/update-category/${selected._id}`,
+        { name: updatedName }
+      );
+      if (data?.success) {
+        toast.success(`${updatedName} is updated`);
+        setSelected(null);
+        setUpdatedName("");
+        setVisible(false);
+        getAllCategory();
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   //delete category
   const handleDelete = async (pId) => {
     try {
@@ -95,11 +95,11 @@ const CreateCategory = () => {
           <div className="col-md-9">
             <h1>Manage Category</h1>
             <div className="p-3 w-50">
-              {/* <CategoryForm
+              <CategoryForm
                 handleSubmit={handleSubmit}
                 value={name}
                 setValue={setName}
-              /> */}
+              />
             </div>
             <div className="w-75">
               <table className="table">
@@ -140,7 +140,7 @@ const CreateCategory = () => {
                 </tbody>
               </table>
             </div>
-            {/* <Modal
+            <Modal
               onCancel={() => setVisible(false)}
               footer={null}
               visible={visible}
@@ -150,7 +150,7 @@ const CreateCategory = () => {
                 setValue={setUpdatedName}
                 handleSubmit={handleUpdate}
               />
-            </Modal> */}
+            </Modal>
           </div>
         </div>
       </div>
