@@ -53,7 +53,7 @@
 
 .footer {
   color: white;
-  padding: 15px;
+  padding: 25px;
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -115,12 +115,12 @@
 }
 
 /* ==================== */
-/* .product-link {
+.product-link {
   text-decoration: none !important;
   color: black !important;
-} */
+}
 
-/* .cat-btn {
+.cat-btn {
   padding: 40px 0px;
   font-size: 24px;
   text-transform: uppercase;
@@ -128,7 +128,7 @@
 .cat-btn:hover {
   background-color: #434343;
   color: white;
-} */
+}
 /* ================
 ====dashboard
 =================== */
