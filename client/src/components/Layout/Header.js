@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
-// import SearchInput from "../Form/SearchInput";
+import SearchInput from "../Form/SearchInput";
 // import useCategory from "../../hooks/useCategory";
 // import { useCart } from "../../context/cart";
 // import { Badge } from "antd";
@@ -40,7 +40,7 @@ const Header = () => {
               🛒 Ecommerce App
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              {/* <SearchInput /> */}
+              <SearchInput />
               <li className="nav-item">
                 <NavLink to="/" className="nav-link ">
                   Home
