@@ -1,9 +1,9 @@
 .banner-img {
-  margin-top: 60px;
+  margin-top: 15px;
 }
 
 .home-page h1 {
-  color: gray;
+  color: rgb(10, 21, 168);
   font-family: "Playfair Display", serif;
 }
 
@@ -12,8 +12,8 @@
   flex-wrap: wrap;
 }
 .home-page .card {
-  background-color: rgba(128, 128, 128, 0.097);
-  width: 18rem;
+  background-color: rgba(86, 85, 85, 0.347);
+  width: 22rem;
 }
 .home-page .card-name-price {
   display: flex;
@@ -35,7 +35,8 @@
 }
 
 .home-page .card-text {
-  color: rgb(90, 89, 89);
+  color: rgb(16, 13, 212);
+  font-weight: 700;
 }
 
 .home-page .card img:hover {
@@ -43,15 +44,16 @@
 }
 
 .home-page .card-img-top {
-  height: 300px !important;
+  height: 250px !important;
 }
 /* ==================
 filters
 ============== */
 .filters h4 {
   margin-top: 100px;
-  color: gray !important;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.337);
+  color: rgb(241, 10, 10) !important;
+  font-weight: 700;
+  border-bottom: 4px solid rgba(23, 22, 22, 0.915);
 }
 
 .ant-checkbox-wrapper:first-of-type {
@@ -63,7 +65,7 @@ filters
 }
 .ant-radio-wrapper {
   margin-bottom: 5px !important;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .filters button {

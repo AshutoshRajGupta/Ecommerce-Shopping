@@ -50,7 +50,7 @@ const ProductDetails = () => {
           />
         </div>
         <div className="col-md-6 product-details-info">
-          <h1 className="text-center">Product Details</h1>
+          <h1 className="text-center">PRODUCT DETAILS</h1>
           <hr />
           <h5>Name : {product.name}</h5>
           <h5>Description : {product.description}</h5>
@@ -69,7 +69,7 @@ const ProductDetails = () => {
       <div className="row container similar-products">
         <h4>Similar Products ➡️</h4>
         {relatedProducts.length < 1 && (
-          <p className="text-center">No Similar Products found</p>
+          <p className="text-center">NO SIMILAR PRODUCTS FOUNDS</p>
         )}
         <div className="d-flex flex-wrap">
           {relatedProducts?.map((p) => (
