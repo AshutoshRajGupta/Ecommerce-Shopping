@@ -13,12 +13,24 @@
 .navbar {
   font-family: "Poppins", sans-serif;
   font-size: 17px;
-  line-height: 26px;
+  line-height: 30px;
   text-transform: uppercase;
-  box-shadow: 0 8px 6px -6px rgb(93, 92, 92);
+  box-shadow: 0 8px 6px -6px rgb(79, 78, 78);
   --webkit-box-shadow: 0 8px 6px -6px gray;
-  border-bottom: 3px solid rgb(158, 75, 190) !important;
+  /* border-bottom: 3px solid rgb(158, 75, 190) !important; */
+  border-bottom: solid rgb(82, 81, 81) !important;
 }
+
+/* .sticky-header {
+  width: 100%;
+  position: fixed !important;
+  top: 0;
+  margin-bottom: 10px;
+  z-index: 100; 
+  background-color: #fefbfb; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  
+} */
 
 .nav-link {
   font-weight: 300 !important;
@@ -70,14 +82,16 @@
 }
 
 .footer a:hover {
-  color: #ffefba;
+  color: #f9e7ab;
   border-bottom: 1px solid #ffefba;
 }
 /* =================================
 ======== page not found css ======= */
 .pnf {
   display: flex;
+  /* min-height: 80vh; */
   min-height: 80vh;
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -95,6 +109,7 @@
 .pnf-btn {
   color: black;
   border: 3px solid rgb(144, 35, 161);
+  /* border: 1px solid black; */
   text-decoration: none;
   padding: 10px;
   margin-top: 10px;
@@ -105,10 +120,15 @@
 }
 /* ========================================= */
 /* =========contact us ========= */
+.policy p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+}
+
 .contactus {
   margin: 0;
   padding: 0;
-  height: 80vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,11 +143,37 @@
   color: rgb(150, 50, 50) !important;
 }
 
-.cat-btn {
+/* .cat-btn {
   padding: 40px 0px;
   font-size: 24px;
   text-transform: uppercase;
+} */
+
+.cat-container {
+  display: grid;
 }
+.cat-container {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid layout */
+  gap: 1rem; /* Add some gap between the buttons */
+}
+
+.cat-btn {
+  padding: 50px;
+  font-size: 24px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  /* width: 100%;  */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
 .cat-btn:hover {
   background-color: #434343;
   color: white;

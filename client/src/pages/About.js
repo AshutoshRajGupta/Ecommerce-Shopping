@@ -13,7 +13,7 @@ const About = () => {
           />
         </div>
         <div className="col-md-4">
-          <p className="text-justify mt-2">
+          <p className="text-justify mt-5">
             We are passionate about timepieces that not only tell time but also
             tell stories. Founded with a vision to curate a collection of
             watches that reflect elegance, precision, and individuality, we

@@ -31,7 +31,7 @@ const CategoryProduct = () => {
         <h3 className="text-center">Category - {category?.name}</h3>
         <h4 className="text-center">{products?.length} result found </h4>
         <div className="row">
-          <div className="col-md-10 offset-1">
+          <div className="col-md-9 offset-1">
             <div className="row row-cols-1 row-cols-md-3 g-3">
               {products?.map((p) => (
                 <div className="card m-3" key={p._id}>
@@ -44,9 +44,9 @@ const CategoryProduct = () => {
                     <div className="card-name-price">
                       <h5 className="card-title">{p.name}</h5>
                       <h5 className="card-title card-price">
-                        {p.price.toLocaleString("en-US", {
+                        {p.price.toLocaleString("en-IN", {
                           style: "currency",
-                          currency: "USD",
+                          currency: "INR",
                         })}
                       </h5>
                     </div>

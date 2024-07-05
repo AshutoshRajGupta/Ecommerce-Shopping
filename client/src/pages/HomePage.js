@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import Layout from "./../components/Layout/Layout";
 import { AiOutlineReload } from "react-icons/ai";
 import "../styles/Homepage.css";
+// import { black } from "colors";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -109,12 +110,90 @@ const HomePage = () => {
   return (
     <Layout title={"ALl Products - Best offers "}>
       {/* banner image */}
-      <img
+      {/* <img
         src="/images/banner.png"
         className="banner-img"
         alt="bannerimage"
         width={"100%"}
-      />
+      /> */}
+      <div>
+        <div id="carouselExampleCaptions" className="carousel slide">
+          <div className="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              className="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img src="/images/cbg2.jpg" className="d-block w-100" alt="..." />
+              <div className="carousel-caption d-none d-md-block">
+                <h5>Unleash Your Style </h5>
+                <p>- Shop the Trendiest Fashion Today!</p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img
+                src="/images/cbg3_1.jpg"
+                className="d-block w-100"
+                alt="..."
+              />
+              <div className="carousel-caption d-none d-md-block">
+                <h5>Discover Your Perfect Fit </h5>
+                <p> - Find the Ideal Products for You.</p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img src="/images/cbg1.jpg" className="d-block w-100" alt="..." />
+
+              <div className="carousel-caption d-none d-md-block">
+                <h5>Your Fashion Destination</h5>
+                <p> - Discover Endless Style Possibilities.</p>
+              </div>
+            </div>
+          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
       {/* banner image */}
       <div className="container-fluid row mt-3 home-page">
         <div className="col-md-3 filters">

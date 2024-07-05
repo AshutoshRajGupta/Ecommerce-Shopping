@@ -22,7 +22,8 @@ const Header = () => {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-header ">
+        {/* fixed-top */}
         <div className="container-fluid">
           <button
             className="navbar-toggler"
