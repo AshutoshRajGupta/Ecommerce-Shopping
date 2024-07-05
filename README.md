@@ -22,6 +22,14 @@ Welcome to our Watch E-Commerce platform built using the MERN (MongoDB, Express.
 - **Payment Gateway Integration:**
   - Safely complete transactions using our integrated payment gateway.
 
+## Screenshots
+- ![image](https://github.com/AshutoshRajGupta/watch-ecommerce/assets/89141709/e766ad12-2750-4ff4-9e25-31aaa1adee53)
+- ![image](https://github.com/AshutoshRajGupta/watch-ecommerce/assets/89141709/050b7b5a-a857-44f0-a01d-83011f78d76d)
+- ![image](https://github.com/AshutoshRajGupta/watch-ecommerce/assets/89141709/fab88fee-adaa-4c4e-a8a2-8453f1ccf911)
+- ![image](https://github.com/AshutoshRajGupta/watch-ecommerce/assets/89141709/f9e8349e-2d9a-4f8e-aa91-7fd469cf1200)
+- ![image](https://github.com/AshutoshRajGupta/watch-ecommerce/assets/89141709/da996c37-6cae-4444-978f-2ba948743a6b)
+
+
 ## Getting Started
 
 ### Prerequisites
