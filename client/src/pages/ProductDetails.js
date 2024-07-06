@@ -49,25 +49,69 @@ const ProductDetails = () => {
             width={"350px"}
           />
         </div>
-        <div className="col-md-6 product-details-info">
-          <h1 className="text-center">PRODUCT DETAILS</h1>
+
+        <div
+          className="col-md-6 product-details-info"
+          style={{
+            padding: "20px",
+            border: "1px solid #ccc",
+            borderRadius: "10px",
+            boxShadow: "0 0 15px rgba(0, 0, 0, 0.2)",
+            backgroundColor: "#f9f9f9",
+          }}
+        >
+          <h1
+            style={{
+              textAlign: "left",
+              fontSize: "2rem",
+              fontWeight: "bold",
+              color: "#333",
+            }}
+          >
+            PRODUCT DETAILS
+          </h1>
           <hr />
-          <h5>Name : {product.name}</h5>
-          <h5>Description : {product.description}</h5>
-          <h5>
-            Price :
+          <h5
+            style={{ textAlign: "left", marginBottom: "10px", color: "#555" }}
+          >
+            Name: {product.name}
+          </h5>
+          <h5
+            style={{ textAlign: "left", marginBottom: "10px", color: "#555" }}
+          >
+            Description: {product.description}
+          </h5>
+          <h5
+            style={{ textAlign: "left", marginBottom: "10px", color: "#555" }}
+          >
+            Price:{" "}
             {product?.price?.toLocaleString("en-IN", {
               style: "currency",
               currency: "INR",
             })}
           </h5>
-          <h5>Category : {product?.category?.name}</h5>
-          <button class="btn btn-secondary ms-1">ADD TO CART</button>
+          <h5
+            style={{ textAlign: "left", marginBottom: "20px", color: "#555" }}
+          >
+            Category: {product?.category?.name}
+          </h5>
+          <button
+            className="btn btn-secondary ms-1"
+            style={{
+              padding: "10px 20px",
+              fontSize: "1rem",
+              backgroundColor: "#007bff",
+              borderColor: "#007bff",
+              color: "#fff",
+            }}
+          >
+            ADD TO CART
+          </button>
         </div>
       </div>
       <hr />
       <div className="row container similar-products">
-        <h4>Similar Products ➡️</h4>
+        <h4>SIMILAR PRODUCTS ➡️</h4>
         {relatedProducts.length < 1 && (
           <p className="text-center">NO SIMILAR PRODUCTS FOUNDS</p>
         )}
@@ -99,19 +143,6 @@ const ProductDetails = () => {
                   >
                     More Details
                   </button>
-                  {/* <button
-                  className="btn btn-dark ms-1"
-                  onClick={() => {
-                    setCart([...cart, p]);
-                    localStorage.setItem(
-                      "cart",
-                      JSON.stringify([...cart, p])
-                    );
-                    toast.success("Item Added to cart");
-                  }}
-                >
-                  ADD TO CART
-                </button> */}
                 </div>
               </div>
             </div>

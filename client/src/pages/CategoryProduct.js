@@ -28,8 +28,8 @@ const CategoryProduct = () => {
   return (
     <Layout>
       <div className="container mt-3 category">
-        <h3 className="text-center">Category - {category?.name}</h3>
-        <h4 className="text-center">{products?.length} result found </h4>
+        <h3 className="text-center">CATEGORY - {category?.name}</h3>
+        <h4 className="text-center">{products?.length} RESULTS FOUND </h4>
         <div className="row">
           <div className="col-md-9 offset-1">
             <div className="row row-cols-1 row-cols-md-3 g-3">
