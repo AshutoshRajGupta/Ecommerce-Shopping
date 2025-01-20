@@ -196,70 +196,80 @@ const HomePage = () => {
       </div>
       {/* banner image */}
       <div className="container-fluid row mt-3 home-page">
-        <div className="col-md-3 filters">
-          <h4 className="text-center">FILTER BY CATEGORY</h4>
-          <div className="d-flex flex-column">
+        <div className="col-md-3 filters p-4 stylish-card">
+          <h4 className="text-center stylish-heading">🎯 Filter by Category</h4>
+          <div className="d-flex flex-column gap-3">
             {categories?.map((c) => (
               <Checkbox
                 key={c._id}
                 onChange={(e) => handleFilter(e.target.checked, c._id)}
+                className="custom-checkbox"
               >
                 {c.name}
               </Checkbox>
             ))}
           </div>
-          {/* price filter */}
-          <h4 className="text-center mt-4">FILTER BY PRICE</h4>
-          <div className="d-flex flex-column">
-            <Radio.Group onChange={(e) => setRadio(e.target.value)}>
+
+          {/* Price Filter */}
+          <h4 className="text-center stylish-heading mt-4">
+            💰 Filter by Price
+          </h4>
+          <div className="d-flex flex-column gap-3">
+            <Radio.Group
+              onChange={(e) => setRadio(e.target.value)}
+              className="custom-radio-group"
+            >
               {Prices?.map((p) => (
-                <div key={p._id}>
+                <div key={p._id} className="custom-radio">
                   <Radio value={p.array}>{p.name}</Radio>
                 </div>
               ))}
             </Radio.Group>
           </div>
-          <div className="d-flex flex-column">
+
+          {/* Reset Button */}
+          <div className="d-flex justify-content-center mt-4">
             <button
-              className="btn btn-danger"
+              className="btn stylish-reset-btn"
               onClick={() => window.location.reload()}
             >
-              RESET FILTERS
+              🔄 Reset Filters
             </button>
           </div>
         </div>
-        <div className="col-md-9 ">
-          <h1 className="text-center">All Products</h1>
-          <div className="d-flex flex-wrap">
+
+        <div className="col-md-9 product-section">
+          <h1 className="text-center stylish-heading mb-4">All Products</h1>
+          <div className="d-flex flex-wrap justify-content-center">
             {products?.map((p) => (
-              <div className="card m-2" key={p._id}>
+              <div className="card m-2 stylish-card" key={p._id}>
                 <img
                   src={`/api/v1/product/product-photo/${p._id}`}
-                  className="card-img-top"
+                  className="card-img-top product-img"
                   alt={p.name}
                 />
                 <div className="card-body">
-                  <div className="card-name-price">
-                    <h5 className="card-title">{p.name}</h5>
-                    <h5 className="card-title card-price">
+                  <div className="card-name-price mb-3">
+                    <h5 className="card-title product-title">{p.name}</h5>
+                    <h5 className="card-title product-price">
                       {p.price.toLocaleString("en-US", {
                         style: "currency",
                         currency: "USD",
                       })}
                     </h5>
                   </div>
-                  <p className="card-text ">
+                  <p className="card-text product-description">
                     {p.description.substring(0, 60)}...
                   </p>
-                  <div className="card-name-price">
+                  <div className="card-actions">
                     <button
-                      className="btn btn-info ms-1"
+                      className="btn btn-info ms-1 action-btn"
                       onClick={() => navigate(`/product/${p.slug}`)}
                     >
                       More Details
                     </button>
                     <button
-                      className="btn btn-dark ms-1"
+                      className="btn btn-dark ms-1 action-btn"
                       onClick={() => {
                         setCart([...cart, p]);
                         localStorage.setItem(
@@ -279,7 +289,7 @@ const HomePage = () => {
           <div className="m-2 p-3">
             {products && products.length < total && (
               <button
-                className="btn loadmore"
+                className="btn loadmore stylish-btn"
                 onClick={(e) => {
                   e.preventDefault();
                   setPage(page + 1);
@@ -289,8 +299,7 @@ const HomePage = () => {
                   "Loading ..."
                 ) : (
                   <>
-                    {" "}
-                    Loadmore <AiOutlineReload />
+                    Load more <AiOutlineReload />
                   </>
                 )}
               </button>

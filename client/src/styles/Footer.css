@@ -1,0 +1,91 @@
+/* Footer Section */
+.footer {
+  background-color: #f1f1f1; /* Light background to match body */
+  color: #343a40; /* Dark text color */
+  padding: 30px 0;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  border-top: 2px solid #ddd; /* Subtle border at the top */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-text h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #007bff; /* Blue text for headings */
+}
+
+.footer-text p {
+  font-size: 1.1rem;
+  color: #6c757d; /* Lighter text for description */
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.footer-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.social-icon {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.footer-bottom {
+  background-color: #343a40; /* Dark footer bottom */
+  color: white;
+  padding: 15px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .footer-links,
+  .footer-social {
+    flex-direction: column; /* Stack the links and icons on smaller screens */
+    gap: 15px;
+  }
+}
