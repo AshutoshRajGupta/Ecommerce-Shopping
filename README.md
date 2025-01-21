@@ -1,4 +1,3 @@
-
 # Watch E-Commerce Website
 
 Welcome to our Watch E-Commerce platform built using the MERN (MongoDB, Express.js, React.js, Node.js) stack!
@@ -7,28 +6,31 @@ Welcome to our Watch E-Commerce platform built using the MERN (MongoDB, Express.
 
 - **User Authentication:**
   - Sign up and log in to access personalized features.
-  
 - **Product Management:**
+
   - Fetch a curated collection of watches.
   - Search for specific watches to find your perfect timepiece.
 
 - **Shopping Cart:**
+
   - Add selected watches to your shopping cart.
   - Create and update your cart effortlessly.
 
 - **Checkout:**
+
   - Securely proceed to checkout for payment and shipment.
 
 - **Payment Gateway Integration:**
   - Safely complete transactions using our integrated payment gateway.
 
 ## Screenshots
-- ![image](https://github.com/AshutoshRajGupta/watch-ecommerce/assets/89141709/e766ad12-2750-4ff4-9e25-31aaa1adee53)
-- ![image](https://github.com/AshutoshRajGupta/watch-ecommerce/assets/89141709/050b7b5a-a857-44f0-a01d-83011f78d76d)
-- ![image](https://github.com/AshutoshRajGupta/watch-ecommerce/assets/89141709/fab88fee-adaa-4c4e-a8a2-8453f1ccf911)
-- ![image](https://github.com/AshutoshRajGupta/watch-ecommerce/assets/89141709/f9e8349e-2d9a-4f8e-aa91-7fd469cf1200)
-- ![image](https://github.com/AshutoshRajGupta/watch-ecommerce/assets/89141709/da996c37-6cae-4444-978f-2ba948743a6b)
 
+- ![1737484803443](image/README/1737484803443.png)
+- ![1737484851499](image/README/1737484851499.png)
+- ![1737484889724](image/README/1737484889724.png)
+- ![1737484924716](image/README/1737484924716.png)
+- ![1737484961894](image/README/1737484961894.png)
+- ![image](https://github.com/AshutoshRajGupta/watch-ecommerce/assets/89141709/da996c37-6cae-4444-978f-2ba948743a6b)
 
 ## Getting Started
 
@@ -40,16 +42,19 @@ Welcome to our Watch E-Commerce platform built using the MERN (MongoDB, Express.
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-username/watch-ecommerce.git
    ```
 
 2. Change to the project directory:
+
    ```bash
    cd watch-ecommerce
    ```
 
 3. Install dependencies for the server:
+
    ```bash
    npm install
    ```
@@ -63,11 +68,13 @@ Welcome to our Watch E-Commerce platform built using the MERN (MongoDB, Express.
 ### Running the Application
 
 1. Start the server:
+
    ```bash
    npm start
    ```
 
 2. Move to the `client` directory and start the client:
+
    ```bash
    cd client
    npm start
