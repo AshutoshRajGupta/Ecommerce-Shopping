@@ -7,6 +7,9 @@ const Categories = () => {
   return (
     <Layout title={"All Categories"}>
       <div className="container">
+        <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">
+          Explore Categories
+        </h2>
         {/* style={{ marginTop: "100px" }} */}
         <div className="row container">
           {categories.map((c) => (

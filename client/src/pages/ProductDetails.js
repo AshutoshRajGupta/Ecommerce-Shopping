@@ -74,16 +74,20 @@ const ProductDetails = () => {
           <h5
             style={{ textAlign: "left", marginBottom: "10px", color: "#555" }}
           >
+            <i className="fas fa-tag"></i>
             Name: {product.name}
           </h5>
           <h5
             style={{ textAlign: "left", marginBottom: "10px", color: "#555" }}
           >
+            {" "}
+            <i className="fas fa-info-circle"></i>
             Description: {product.description}
           </h5>
           <h5
             style={{ textAlign: "left", marginBottom: "10px", color: "#555" }}
           >
+            <i className="fas fa-rupee-sign"></i>
             Price:{" "}
             {product?.price?.toLocaleString("en-IN", {
               style: "currency",
@@ -93,6 +97,7 @@ const ProductDetails = () => {
           <h5
             style={{ textAlign: "left", marginBottom: "20px", color: "#555" }}
           >
+            <i className="fas fa-list"></i>
             Category: {product?.category?.name}
           </h5>
           <button
@@ -105,6 +110,7 @@ const ProductDetails = () => {
               color: "#fff",
             }}
           >
+            <i className="fas fa-shopping-cart"></i>
             ADD TO CART
           </button>
         </div>

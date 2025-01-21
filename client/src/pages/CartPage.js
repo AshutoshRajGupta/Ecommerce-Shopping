@@ -79,7 +79,7 @@ const CartPage = () => {
   };
   return (
     <Layout>
-      <div className=" cart-page">
+      <div className="cart-page">
         <div className="row">
           <div className="col-md-12">
             <h1 className="text-center bg-light p-2 mb-1">
@@ -96,30 +96,34 @@ const CartPage = () => {
             </h1>
           </div>
         </div>
-        <div className="container ">
-          <div className="row ">
-            <div className="col-md-7  ">
-              {/* p-0 m-0 */}
+
+        <div className="container">
+          <div className="row">
+            <div className="col-md-7">
               {cart?.map((p) => (
-                <div className="row mb-2 card flex-row" key={p._id}>
-                  <div className="col-md-4">
+                <div
+                  className="row mb-2 card flex-row items-center p-3"
+                  key={p._id}
+                >
+                  <div className="col-md-3">
                     <img
                       src={`/api/v1/product/product-photo/${p._id}`}
-                      className="card-img-top"
+                      className="rounded shadow-sm object-cover"
                       alt={p.name}
-                      width="200%"
-                      height={"200px"}
-                      // 100 130
+                      width="100"
+                      height="100"
                     />
                   </div>
-                  <div className="col-md-8">
-                    <p>{p.name}</p>
-                    <p>{p.description.substring(0, 30)}</p>
-                    <p>Price : {p.price}</p>
+                  <div className="col-md-6">
+                    <p className="font-semibold">{p.name}</p>
+                    <p className="text-gray-600 text-sm">
+                      {p.description.substring(0, 30)}...
+                    </p>
+                    <p className="text-blue-600 font-bold">₹{p.price}</p>
                   </div>
-                  <div className="col-md-4 cart-remove-btn">
+                  <div className="col-md-3 cart-remove-btn text-center">
                     <button
-                      className="btn btn-danger"
+                      className="btn btn-danger hover:bg-red-700 transition-all"
                       onClick={() => removeCartItem(p._id)}
                     >
                       Remove
@@ -128,64 +132,62 @@ const CartPage = () => {
                 </div>
               ))}
             </div>
-            <div className="col-md-5 cart-summary ">
-              <h2>Cart Summary</h2>
-              <p>Total | Checkout | Payment</p>
-              <hr />
-              <h4>Total : {totalPrice()} </h4>
+
+            <div className="col-md-5 cart-summary">
+              <h2 className="text-2xl font-bold text-blue-600 border-b-2 border-blue-600 pb-2 mb-4">
+                Cart Summary
+              </h2>
+              <p className="text-gray-700 text-lg mb-4">
+                Total | Checkout | Payment
+              </p>
+              <hr className="border-gray-300 mb-4" />
+              <h4 className="text-xl font-semibold text-green-600">
+                Total: ₹{totalPrice()}
+              </h4>
+
               {auth?.user?.address ? (
-                <>
-                  <div className="mb-3">
-                    <h4>Current Address</h4>
-                    <h5>{auth?.user?.address}</h5>
-                    <button
-                      className="btn btn-outline-warning"
-                      onClick={() => navigate("/dashboard/user/profile")}
-                    >
-                      Update Address
-                    </button>
-                  </div>
-                </>
+                <div className="mb-3">
+                  <h4 className="font-semibold">Current Address</h4>
+                  <h5 className="text-gray-700">{auth?.user?.address}</h5>
+                  <button
+                    className="btn btn-outline-warning hover:bg-yellow-500 transition-all"
+                    onClick={() => navigate("/dashboard/user/profile")}
+                  >
+                    Update Address
+                  </button>
+                </div>
               ) : (
                 <div className="mb-3">
                   {auth?.token ? (
                     <button
-                      className="btn btn-outline-warning"
+                      className="btn btn-outline-warning hover:bg-yellow-500 transition-all"
                       onClick={() => navigate("/dashboard/user/profile")}
                     >
                       Update Address
                     </button>
                   ) : (
                     <button
-                      className="btn btn-outline-warning"
-                      onClick={() =>
-                        navigate("/login", {
-                          state: "/cart",
-                        })
-                      }
+                      className="btn btn-outline-warning hover:bg-yellow-500 transition-all"
+                      onClick={() => navigate("/login", { state: "/cart" })}
                     >
-                      Plase Login to checkout
+                      Please Login to checkout
                     </button>
                   )}
                 </div>
               )}
+
               <div className="mt-2">
-                {!clientToken || !auth?.token || !cart?.length ? (
-                  ""
-                ) : (
+                {!clientToken || !auth?.token || !cart?.length ? null : (
                   <>
                     <DropIn
                       options={{
                         authorization: clientToken,
-                        paypal: {
-                          flow: "vault",
-                        },
+                        paypal: { flow: "vault" },
                       }}
                       onInstance={(instance) => setInstance(instance)}
                     />
-
                     <button
-                      className="btn btn-primary"
+                      className="btn btn-primary w-full py-2 mt-3"
                       onClick={handlePayment}
                       disabled={loading || !instance || !auth?.user?.address}
                     >
