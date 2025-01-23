@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 import { useParams, useNavigate } from "react-router-dom";
+import { useCart } from "../context/cart";
+import toast from "react-hot-toast";
+
 import "../styles/CategoryProductStyles.css";
 import axios from "axios";
 const CategoryProduct = () => {
   const params = useParams();
   const navigate = useNavigate();
+  const [cart, setCart] = useCart();
+
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
 
@@ -31,7 +36,7 @@ const CategoryProduct = () => {
         <h3 className="text-center">CATEGORY - {category?.name}</h3>
         <h4 className="text-center">{products?.length} RESULTS FOUND </h4>
         <div className="row">
-          <div className="col-md-9 offset-1">
+          <div className="col-md-12 offset-1">
             <div className="row row-cols-1 row-cols-md-3 g-3">
               {products?.map((p) => (
                 <div className="card m-3" key={p._id}>
@@ -60,37 +65,24 @@ const CategoryProduct = () => {
                       >
                         More Details
                       </button>
-                      {/* <button
-                    className="btn btn-dark ms-1"
-                    onClick={() => {
-                      setCart([...cart, p]);
-                      localStorage.setItem(
-                        "cart",
-                        JSON.stringify([...cart, p])
-                      );
-                      toast.success("Item Added to cart");
-                    }}
-                  >
-                    ADD TO CART
-                  </button> */}
+                      <button
+                        className="btn btn-dark ms-1"
+                        onClick={() => {
+                          setCart([...cart, p]);
+                          localStorage.setItem(
+                            "cart",
+                            JSON.stringify([...cart, p])
+                          );
+                          toast.success("Item Added to cart");
+                        }}
+                      >
+                        ADD TO CART
+                      </button>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-            {/* <div className="m-2 p-3">
-            {products && products.length < total && (
-              <button
-                className="btn btn-warning"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPage(page + 1);
-                }}
-              >
-                {loading ? "Loading ..." : "Loadmore"}
-              </button>
-            )}
-          </div> */}
           </div>
         </div>
       </div>

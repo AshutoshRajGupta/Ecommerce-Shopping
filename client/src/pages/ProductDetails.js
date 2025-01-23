@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./../components/Layout/Layout";
 import axios from "axios";
+import { useCart } from "../context/cart";
+import toast from "react-hot-toast";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/ProductDetailsStyles.css";
 
 const ProductDetails = () => {
   const params = useParams();
   const navigate = useNavigate();
+  const [cart, setCart] = useCart();
   const [product, setProduct] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
 
@@ -108,6 +111,11 @@ const ProductDetails = () => {
               backgroundColor: "#007bff",
               borderColor: "#007bff",
               color: "#fff",
+            }}
+            onClick={() => {
+              setCart([...cart, product]);
+              localStorage.setItem("cart", JSON.stringify([...cart, product]));
+              toast.success("Item Added to cart");
             }}
           >
             <i className="fas fa-shopping-cart"></i>

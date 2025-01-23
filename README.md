@@ -26,7 +26,7 @@ Welcome to our Watch E-Commerce platform built using the MERN (MongoDB, Express.
 ## Screenshots
 
 - ![1737484803443](image/README/1737484803443.png)
-- ![1737484851499](image/README/1737484851499.png)
+- ![1737655558153](image/README/1737655558153.png)
 - ![1737484889724](image/README/1737484889724.png)
 - ![1737484924716](image/README/1737484924716.png)
 - ![1737484961894](image/README/1737484961894.png)
