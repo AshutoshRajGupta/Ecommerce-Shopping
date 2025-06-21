@@ -193,9 +193,9 @@ body {
 
 .action-btn {
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 30px;
-  width: 48%;
+  width: 68%;
   transition: all 0.3s ease;
 }
 

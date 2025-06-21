@@ -266,7 +266,7 @@ const HomePage = () => {
                       className="btn btn-info ms-1 action-btn"
                       onClick={() => navigate(`/product/${p.slug}`)}
                     >
-                      More Details
+                      Details
                     </button>
                     <button
                       className="btn btn-dark ms-1 action-btn"

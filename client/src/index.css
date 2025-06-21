@@ -191,3 +191,105 @@
   color: white;
   padding: 20px 0px;
 }
+
+.admin-menu {
+  min-height: 100%;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.admin-list .admin-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 12px 15px;
+  transition: all 0.2s ease-in-out;
+  color: #333;
+}
+
+.admin-list .admin-link:hover {
+  background-color: #f0f4ff;
+  color: #0056b3;
+}
+
+.admin-list .admin-link.active {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  border-left: 4px solid #0056b3;
+}
+
+.admin-icon {
+  font-size: 1.2rem;
+}
+
+.card h6 {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.card ul li {
+  font-size: 0.95rem;
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.product-link:hover .product-card {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+}
+
+.alert {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.text-muted {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .d-flex {
+    justify-content: center;
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}

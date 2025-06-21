@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Layout from "./../../components/Layout/Layout";
-import AdminMenu from "./../../components/Layout/AdminMenu";
+import Layout from "../../components/Layout/Layout";
+import AdminMenu from "../../components/Layout/AdminMenu";
 import toast from "react-hot-toast";
 import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
 import { Modal } from "antd";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
+
 const CreateCategory = () => {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState(null);
   const [updatedName, setUpdatedName] = useState("");
-  //handle Form
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -19,18 +21,17 @@ const CreateCategory = () => {
         name,
       });
       if (data?.success) {
-        toast.success(`${name} is created`);
+        toast.success(`${name} created successfully`);
+        setName("");
         getAllCategory();
       } else {
         toast.error(data.message);
       }
     } catch (error) {
-      console.log(error);
-      toast.error("somthing went wrong in input form");
+      toast.error("Something went wrong while creating category");
     }
   };
 
-  //get all cat
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get("/api/v1/category/get-category");
@@ -38,8 +39,7 @@ const CreateCategory = () => {
         setCategories(data?.category);
       }
     } catch (error) {
-      console.log(error);
-      toast.error("Something wwent wrong in getting catgeory");
+      toast.error("Something went wrong while fetching categories");
     }
   };
 
@@ -47,16 +47,17 @@ const CreateCategory = () => {
     getAllCategory();
   }, []);
 
-  //update category
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
         `/api/v1/category/update-category/${selected._id}`,
-        { name: updatedName }
+        {
+          name: updatedName,
+        }
       );
       if (data?.success) {
-        toast.success(`${updatedName} is updated`);
+        toast.success(`Category updated to "${updatedName}"`);
         setSelected(null);
         setUpdatedName("");
         setVisible(false);
@@ -65,85 +66,96 @@ const CreateCategory = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Error while updating category");
     }
   };
-  //delete category
+
   const handleDelete = async (pId) => {
     try {
       const { data } = await axios.delete(
         `/api/v1/category/delete-category/${pId}`
       );
       if (data.success) {
-        toast.success(`category is deleted`);
-
+        toast.success(`Category deleted`);
         getAllCategory();
       } else {
         toast.error(data.message);
       }
     } catch (error) {
-      toast.error("Somtihing went wrong");
+      toast.error("Something went wrong while deleting category");
     }
   };
+
   return (
-    <Layout title={"Dashboard - Create Category"}>
-      <div className="container-fluid m-3 p-3 dashboard">
+    <Layout title={"Dashboard - Manage Categories"}>
+      <div className="container-fluid p-3 dashboard">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-3 mb-3">
             <AdminMenu />
           </div>
+
           <div className="col-md-9">
-            <h1>Manage Category</h1>
-            <div className="p-3 w-50">
-              <CategoryForm
-                handleSubmit={handleSubmit}
-                value={name}
-                setValue={setName}
-              />
+            <div className="card shadow-sm p-4 mb-4">
+              <h4 className="mb-4 text-primary">Create New Category</h4>
+              <div className="w-100 w-md-50">
+                <CategoryForm
+                  handleSubmit={handleSubmit}
+                  value={name}
+                  setValue={setName}
+                />
+              </div>
             </div>
-            <div className="w-75">
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {categories?.map((c) => (
-                    <>
+
+            <div className="card shadow-sm p-4">
+              <h4 className="mb-4 text-secondary">Existing Categories</h4>
+              {categories?.length > 0 ? (
+                <div className="table-responsive">
+                  <table className="table table-hover table-bordered text-center">
+                    <thead className="table-light">
                       <tr>
-                        <td key={c._id}>{c.name}</td>
-                        <td>
-                          <button
-                            className="btn btn-primary ms-2"
-                            onClick={() => {
-                              setVisible(true);
-                              setUpdatedName(c.name);
-                              setSelected(c);
-                            }}
-                          >
-                            Edit
-                          </button>
-                          <button
-                            className="btn btn-danger ms-2"
-                            onClick={() => {
-                              handleDelete(c._id);
-                            }}
-                          >
-                            Delete
-                          </button>
-                        </td>
+                        <th>Name</th>
+                        <th>Actions</th>
                       </tr>
-                    </>
-                  ))}
-                </tbody>
-              </table>
+                    </thead>
+                    <tbody>
+                      {categories.map((c) => (
+                        <tr key={c._id}>
+                          <td>{c.name}</td>
+                          <td>
+                            <button
+                              className="btn btn-sm btn-outline-primary me-2"
+                              onClick={() => {
+                                setVisible(true);
+                                setUpdatedName(c.name);
+                                setSelected(c);
+                              }}
+                            >
+                              <FaEdit /> Edit
+                            </button>
+                            <button
+                              className="btn btn-sm btn-outline-danger"
+                              onClick={() => handleDelete(c._id)}
+                            >
+                              <FaTrashAlt /> Delete
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <p className="text-muted">
+                  No categories found. Add a new one above.
+                </p>
+              )}
             </div>
+
             <Modal
+              title="Update Category"
               onCancel={() => setVisible(false)}
               footer={null}
-              visible={visible}
+              open={visible}
             >
               <CategoryForm
                 value={updatedName}
