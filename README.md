@@ -1,6 +1,5 @@
-# Watch E-Commerce Website
-
-Welcome to our Watch E-Commerce platform built using the MERN (MongoDB, Express.js, React.js, Node.js) stack!
+# E-Commerce Website
+E-Commerce platform built using the MERN (MongoDB, Express.js, React.js, Node.js) stack!
 
 ## Features
 
@@ -8,12 +7,12 @@ Welcome to our Watch E-Commerce platform built using the MERN (MongoDB, Express.
   - Sign up and log in to access personalized features.
 - **Product Management:**
 
-  - Fetch a curated collection of watches.
-  - Search for specific watches to find your perfect timepiece.
+  - Fetch a curated collection of different items.
+  - Search for specific items to find your perfect timepiece.
 
 - **Shopping Cart:**
 
-  - Add selected watches to your shopping cart.
+  - Add selected items to your shopping cart.
   - Create and update your cart effortlessly.
 
 - **Checkout:**
